@@ -1,0 +1,56 @@
+:root {
+  --header-height: theme('spacing.14');
+  --docs-scroll-margin-block: calc(var(--header-height) + 4rem);
+  --blogpost-scroll-margin-block: calc(var(--header-height));
+}
+html {
+  scroll-behavior: smooth;
+}
+*, :after, :before {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+}
+
+@screen md {
+  :root {
+    --header-height: theme('spacing.20');
+    --blogpost-scroll-margin-block: calc(var(--header-height) - 0.5rem);
+  }
+}
+
+@screen xl {
+  :root {
+    --docs-scroll-margin-block: calc(var(--header-height) + 1rem);
+  }
+}
+.prose {
+  color: #334155;
+  max-width: none;
+  
+}
+.dark .prose {
+  color: #FAFAFA;
+  max-width: none;
+  
+}
+
+.dark body {
+  background-color: #334155;
+  color: #ebf4f1;
+}
+
+.sepia body {
+  background-color: #f1e7d0;
+  color: #433422;
+}
+
+.prose-slate{
+
+}
+button:focus-visible, div:focus-visible, a:focus-visible {
+  /* remove default focus style */
+  outline: none;
+  /* custom focus style */
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #00DC82;
+}

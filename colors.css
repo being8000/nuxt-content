@@ -1,0 +1,30 @@
+:root {
+    --APP_COLOR_SYSTEM_L_PURPLE_90: rgb(246, 234, 246);
+    --APP_COLOR_SYSTEM_L_PURPLE_80: rgb(238, 213, 237);
+    --APP_COLOR_SYSTEM_L_PURPLE_70: rgb(230, 192, 228);
+    --APP_COLOR_SYSTEM_L_PURPLE_60: rgb(222, 171, 219);
+    --APP_COLOR_SYSTEM_L_PURPLE_50: rgb(214, 150, 210);
+    --APP_COLOR_SYSTEM_L_PURPLE_40: rgb(205, 129, 201);
+    --APP_COLOR_SYSTEM_L_PURPLE_30: rgb(197, 108, 192);
+    --APP_COLOR_SYSTEM_L_PURPLE_20: rgb(189, 86, 183);
+    --APP_COLOR_SYSTEM_L_PURPLE_10: rgb(181, 66, 174);
+    --APP_COLOR_SYSTEM_MAIN_PURPLE: rgb(173, 45, 165);
+    --APP_COLOR_SYSTEM_D_PURPLE_10: rgb(155, 40, 148);
+    --APP_COLOR_SYSTEM_D_PURPLE_20: rgb(138, 36, 132);
+    --APP_COLOR_SYSTEM_D_PURPLE_30: rgb(121, 31, 115);
+    --APP_COLOR_SYSTEM_D_PURPLE_40: rgb(103, 27, 99);
+    --APP_COLOR_SYSTEM_D_PURPLE_50: rgb(86, 22, 82);
+    --APP_COLOR_SYSTEM_D_PURPLE_60: rgb(69, 18, 66);
+    --APP_COLOR_SYSTEM_D_PURPLE_70: rgb(51, 13, 49);
+    --APP_COLOR_SYSTEM_D_PURPLE_80: rgb(34, 9, 33);
+    --APP_COLOR_SYSTEM_D_PURPLE_90: rgb(17, 4, 16);
+    --App-color: #FFD7F4;
+    --App-color: #FFABF0;
+    --App-color: #FF77F0;
+    --App-color: #DF5CD3;
+    --App-color: #C140B7;
+    --App-color: #A3229C;
+    --App-color: #82007E;
+    --App-color: #5C0059;
+    --App-color: #390036;
+}
