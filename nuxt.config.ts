@@ -89,11 +89,8 @@ export default defineNuxtConfig({
   css: [resolve(__dirname, './assets/nuxt.css')],
   app: {
     head: {
-      htmlAttrs: {
-        class: '[--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem] js-focus-visible'
-      },
       bodyAttrs: {
-        class: 'antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900'
+        class: 'antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 min-h-screen'
       },
       meta: [
         { property: 'og:site_name', content: 'e-pon Wallet'},
