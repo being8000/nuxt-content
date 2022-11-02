@@ -40,29 +40,23 @@ const a = {
 }
 ```
 
-
 I am using a :github-button in the middle of a paragraph.
 
 ::card
 The content of the card
 ::
 
-
+::card
+The content of the card
+::
 
 ::card
 The content of the card
 ::
 
-
 ::card
 The content of the card
 ::
-
-
-::card
-The content of the card
-::
-
 
 ::card
 The content of the card

@@ -1,6 +1,8 @@
 <template>
   <div>
-    <NuxtLoadingIndicator />
+        
+        <!-- <EponAnimLoading /> -->
+    <NuxtLoadingIndicator color="#A3229C"/>
     <AppHeader></AppHeader>
     <NuxtPage />
   </div>
