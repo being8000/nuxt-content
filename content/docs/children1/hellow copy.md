@@ -1,6 +1,6 @@
 ---
 navigation:
-  title: 'hello copy'
+  title: 'hello copy2'
   icon: '🏡'
 ---
 
@@ -20,7 +20,7 @@ navigation:
 ### About Content v22
 
 [Back home](/)
-
+123123
 
 ### About Content v23
 

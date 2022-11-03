@@ -4,19 +4,20 @@ import type { RouterConfig } from '@nuxt/schema'
 export default <RouterConfig>{
   scrollBehavior(to, _, savedPosition) {
     const nuxtApp = useNuxtApp();
+    const { $scrollTo } = useNuxtApp();
     if(to.hash){
-      const heading = document.querySelector(to.hash) as any;
+      const heading = document.getElementById(to.hash.replace('#', '')) as any;
       const height = document.getElementById('header-bar').offsetHeight
       const top = heading.offsetTop + height
       return new Promise((resolve) => {
-        // $scrollTo(top, 300)
-        const st = setTimeout(() => {
-          window.scrollTo({
-            left: 0,
-            top: top
-          })
-          clearTimeout(st)
-        }, 0)
+        $scrollTo(top, 300)
+        // const st = setTimeout(() => {
+        //   document.getElementById('app-main-content').scrollTo({
+        //     left: 0,
+        //     top: top
+        //   })
+        //   clearTimeout(st)
+        // }, 50)
         return
       })
       

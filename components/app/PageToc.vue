@@ -58,12 +58,12 @@ onMounted(() => {
   setTimeout(() => {
     getTocList(links, contentWrapper)
     scroll(links)
-    document.addEventListener('scroll', scroll)
+    document.getElementById('app-main-content').addEventListener('scroll', scroll)
   }, 30)
 })
 
 onUnmounted(() => {
-  document.removeEventListener('scroll', scroll)
+  document.getElementById('app-main-content').removeEventListener('scroll', scroll)
 })
 
 </script>

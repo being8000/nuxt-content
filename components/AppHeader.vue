@@ -166,72 +166,34 @@
                 </svg>
               </span>
             </button>
-            <button type="button" class="
+            <div class="dropdown dropdown-end">
+              <label tabindex="0" class="
                 text-slate-200
                 w-8
                 h-8
                 flex
                 items-center
                 justify-center
-                hover:text-slate-600
-                dark:text-slate-100 dark:hover:text-slate-300
-              ">
-              <span class="sr-only">Navigation</span><svg width="24" height="24" fill="none" aria-hidden="true">
-                <path
-                  d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </button>
+                hover:text-slate-200
+                dark:text-slate-100 dark:hover:text-slate-300">
+                <span class="sr-only">Navigation</span><svg width="24" height="24" fill="none" aria-hidden="true">
+                  <path
+                    d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </label>
+              <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="/">Home</a></li>
+                <li><a href="/deployments">Deployments</a></li>
+                <li><a href="/docs">Docs</a></li>
+              </ul>
+            </div>
 
-            <div style="
-                position: fixed;
-                top: 1px;
-                left: 1px;
-                width: 1px;
-                height: 0;
-                padding: 0;
-                margin: -1px;
-                overflow: hidden;
-                clip: rect(0, 0, 0, 0);
-                white-space: nowrap;
-                border-width: 0;
-                display: none;
-              "></div>
 
           </div>
         </div>
       </div>
-      <div class="
-          flex
-          items-center
-          p-4
-          border-b border-slate-900/10
-          lg:hidden
-          dark:border-slate-50/[0.06]
-        ">
-        <button type="button" class="
-            text-slate-200
-            hover:text-slate-600
-            dark:text-slate-100 dark:hover:text-slate-300
-          ">
-          <span class="sr-only">Navigation</span><svg width="24" height="24">
-            <path d="M5 6h14M5 12h14M5 18h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            </path>
-          </svg>
-        </button>
-        <ol class="ml-4 flex text-sm leading-6 whitespace-nowrap min-w-0">
-          <li class="flex items-center text-slate-200
-            hover:text-slate-600
-            dark:text-slate-100 dark:hover:text-slate-300">
-            Base Styles<svg width="3" height="6" aria-hidden="true" class="mx-3 overflow-visible text-slate-100">
-              <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            </svg>
-          </li>
-          <li class="font-semibold text-slate-200 truncate dark:text-slate-200">
-            Preflight
-          </li>
-        </ol>
-      </div>
+      <AppDocBreadCrumbs />
     </div>
   </div>
 </template>
@@ -244,5 +206,11 @@ const colorMode = useColorMode()
 const setColorMode = (mode) => {
   colorMode.value = mode
   colorMode.preference = mode
+  document.querySelector('html').setAttribute('data-theme', mode)
 }
+
+onMounted(() => {
+  const mode = localStorage.getItem('nuxt-color-mode') == 'dark' ? 'dark' : 'light'
+  document.querySelector('html').setAttribute('data-theme', mode)
+})
 </script>

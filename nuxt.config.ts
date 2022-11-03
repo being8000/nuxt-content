@@ -7,23 +7,20 @@ import svgLoader from 'vite-svg-loader'
 export default defineNuxtConfig({
   content: {
     documentDriven: true,
-    navigation: {
-      fields: [ 'parent' ]
-    },
     markdown: {
-      remarkPlugins: [
-        'remark-squeeze-paragraphs',
-        'remark-slug',
-        'remark-autolink-headings',
-        'remark-external-links',
-        'remark-footnotes'
-      ],
-      rehypePlugins: [
-        'rehype-minify-whitespace',
-        'rehype-sort-attribute-values',
-        'rehype-sort-attributes',
-        'rehype-raw'
-      ],
+      // remarkPlugins: [
+      //   'remark-squeeze-paragraphs',
+      //   'remark-slug',
+      //   'remark-autolink-headings',
+      //   'remark-external-links',
+      //   'remark-footnotes'
+      // ],
+      // rehypePlugins: [
+      //   'rehype-minify-whitespace',
+      //   'rehype-sort-attribute-values',
+      //   'rehype-sort-attributes',
+      //   'rehype-raw'
+      // ],
       // prism: {
       //   theme: 'prism-themes/themes/prism-material-oceanic.css'
       // }
@@ -46,7 +43,7 @@ export default defineNuxtConfig({
   alias: {
     '@svg': fileURLToPath(new URL('./assets/svg', import.meta.url)),
   },
-  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@vueuse/nuxt',],
+  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@vueuse/nuxt', '@pinia/nuxt'],
   build: {
     transpile: ['@tailwindcss/typography', '@headlessui/vue', '@heroicons/vue' ],
     postcss: {

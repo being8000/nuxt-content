@@ -16,7 +16,15 @@
         <!-- <ThemeSelector></ThemeSelector>
         <ColorMode /> -->
         <slot />
+        <hr>
+        <div class="flex items-center justify-between gap-3 mt-3">
+          <AppDocPrev v-if="prev" :page="prev"></AppDocPrev>
+          <AppDocNext v-if="next" :page="next"></AppDocNext>
+        </div>
       </div>
+      <div class="u-text-gray-500 mt-8 flex flex-row justify-between text-sm" data-v-0c24b00a="">
+      </div>
+
       <div v-if="toc && toc?.links?.length > 0"
         class="fixed z-20 top-[3.8125rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block">
         <AppPageToc :toc="toc" />
@@ -42,11 +50,15 @@ const {
   prev
 } = useContent()
 
+
 const route = useRoute()
+
 const _path = (route.path?.match(/^\/\w+/) || [])[0]
 const navigationTree = computed(() => {
   return navigation.value.filter(el => el._path == _path)[0] || {}
 })
+
+
 
 
 const headerLinks = ref([])

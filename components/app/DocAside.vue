@@ -1,9 +1,9 @@
 
 <template>
   <li v-for="(item, index) in navigationTree" :key="index" :class="{
-    'mt-2 lg:mt-2': cIndex == 1 && item.children,
+    'mt-2 lg:mt-2 ': cIndex == 1 && item.children,
   }">
-    <h5 v-if="item.children?.length > 0" class="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">
+    <h5 v-if="item.children?.length > 0" class="pl-1 mb-3 font-semibold text-slate-900 dark:text-slate-200">
       {{ item.title }}
     </h5>
     <NuxtLink v-else-if="item._path != parentPath" :to="item._path" :class="{
@@ -14,7 +14,7 @@
       {{ item.title }}
     </NuxtLink>
 
-    <ul v-if="item.children" class="space-y-6 lg:space-y-2 border-l border-slate-100 dark:border-slate-800">
+    <ul v-if="item.children" class="space-y-2 lg:space-y-2  border-l border-slate-100 dark:border-slate-800">
       <AppDocAside :navigation-tree="item.children" :cIndex="cIndex + 1" :parentPath="item._path" />
     </ul>
   </li>

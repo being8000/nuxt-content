@@ -22,13 +22,11 @@ export default defineNuxtPlugin((nuxtApp) => {
    * @param {number} amount
    */
    function move(amount) {
-    document.documentElement.scrollTop = amount
-    document.body.parentNode.scrollTop = amount
-    document.body.scrollTop = amount
+    document.getElementById('app-main-content').scrollTop = amount
   }
   
   function position() {
-    return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop
+    return document.getElementById('app-main-content').scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop
   }
   
   function debounce(func, wait, immediate) {
