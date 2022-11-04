@@ -24,11 +24,11 @@
           lg:mx-0
         ">
         <div class="relative flex items-center">
-          <a class="mr-3 flex-none w-[2.0625rem] overflow-hidden md:w-auto" href="/"><span class="sr-only">Tailwind CSS
+          <a class="mr-3 flex-none  overflow-hidden md:w-auto" href="/"><span class="sr-only">Tailwind CSS
               home page</span>
             <Logo style="height: 28px"></Logo>
           </a>
-          <!-- <div class="relative" >
+          <!-- <div class="relative" data-headlessui-state="">
             <button class="
                 text-xs
                 leading-5
@@ -44,8 +44,9 @@
                 hover:bg-slate-400/20
                 dark:highlight-white/5
               " id="headlessui-menu-button-1" type="button" aria-haspopup="true" aria-expanded="false"
-             >
-              e-pon Digital inc.
+              data-headlessui-state="">
+              v
+              1.0.0
             </button>
           </div> -->
 
@@ -134,7 +135,7 @@
               </a> -->
             </div>
           </div>
-          <div class="ml-2 -my-1 lg:hidden ml-auto flex flex-row">
+          <div class="ml-auto -my-1 lg:hidden ml-auto flex flex-row">
             <button type="button" class="inline" id="headlessui-listbox-button-4" aria-haspopup="true"
               aria-expanded="false" data-headlessui-state=""
               aria-labelledby="headlessui-listbox-label-3 headlessui-listbox-button-4">
