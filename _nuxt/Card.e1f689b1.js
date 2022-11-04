@@ -1,0 +1,1 @@
+import{a as e,o as a,b as o,r as t}from"./entry.c5f8fede.js";const s={},d={class:"p-6 border dark:bg-black dark:border-gray-700 dark:text-teal-50 rounded"};function c(r,n){return a(),o("div",d,[t(r.$slots,"default")])}const _=e(s,[["render",c]]);export{_ as default};

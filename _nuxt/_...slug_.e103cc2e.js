@@ -1,0 +1,1 @@
+import{e as o,K as a,o as n,c as s,l as c,k as _,$ as r,a0 as p}from"./entry.c5f8fede.js";const d=o({__name:"[...slug]",setup(u){return a(),(m,l)=>{const e=r,t=p;return n(),s(t,{name:"doc-layout"},{default:c(()=>[_(e,{id:"content-wrapper",class:"relative z-20 mt-8 prose dark:prose-invert"})]),_:1})}}});export{d as default};

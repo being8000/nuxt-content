@@ -1,0 +1,1 @@
+import{a as o,o as e,b as t,k as c,l as a,$ as s,h as _}from"./entry.c5f8fede.js";const r={},l=_("h1",null,"Document not found",-1);function u(f,d){const n=s;return e(),t("main",null,[c(n,null,{"not-found":a(()=>[l]),_:1})])}const i=o(r,[["render",u]]);export{i as default};
