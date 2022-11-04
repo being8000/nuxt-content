@@ -64,13 +64,13 @@
               ">
               <ul class="flex space-x-8">
                 <li>
-                  <a class="hover:text-sky-500 dark:hover:text-sky-400" href="/">Home</a>
+                  <a class="hover:text-slate-50 dark:hover:text-primary-400" href="/">Home</a>
                 </li>
                 <li>
-                  <a class="hover:text-sky-500 dark:hover:text-sky-400" href="/deployments">Developments</a>
+                  <a class="hover:text-slate-50 dark:hover:text-primary-400" href="/deployments">Developments</a>
                 </li>
                 <li>
-                  <a class="hover:text-sky-500 dark:hover:text-sky-400" href="/docs">Docs</a>
+                  <a class="hover:text-slate-50 dark:hover:text-primary-400" href="/docs">Docs</a>
                 </li>
 
                 <!-- <li>
