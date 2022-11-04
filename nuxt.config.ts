@@ -113,7 +113,7 @@ export default defineNuxtConfig({
     }
   },
   tailwindcss: {
-    jit: true,
+    // jit: true,
     // add '~tailwind.config` alias
     // exposeConfig: true,
     config: {
@@ -128,6 +128,9 @@ export default defineNuxtConfig({
     plugins: [
       svgLoader(),
     ]
-  }
-
+  },
+  target: 'server',
+  router: {
+    // base: '/nuxt-content/'
+  },
 })

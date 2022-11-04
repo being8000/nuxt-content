@@ -12,6 +12,7 @@ const { toc } = useContent()
 const refToc = ref(null)
 const tocLiList = ref([])
 const { $scrollTo, $position, $debounce } = useNuxtApp()
+const nuxtApp = useNuxtApp()
 const scroll = (toc) => {
   var visibleBottom = 0 + document.documentElement.clientHeight;
   var visibleTop = window.scrollY;
@@ -31,7 +32,7 @@ const getTocList = (links, dom) => {
   })
 }
 const setTocItemStyle = (visibleBottom, visibleTop, links) => {
-
+  console.log(tocLiList.value, 'tocLiList.value')
   tocLiList.value.map((currentDom, index) => {
     const rect = currentDom.getBoundingClientRect()
     const tocDom = document.querySelector('#_app-page-toc-left-side').querySelector(`[href="#${currentDom.getAttribute('id')}"]`)
@@ -53,13 +54,14 @@ const setTocItemStyle = (visibleBottom, visibleTop, links) => {
 }
 onMounted(() => {
   const contentWrapper = document.querySelector(`#content-wrapper`)
-  const links = toc.value?.links || []
   tocLiList.value = []
+  console.log(toc.value?.links, 'toc.value?.links')
   setTimeout(() => {
+    const links = toc.value?.links || []
     getTocList(links, contentWrapper)
     scroll(links)
     document.getElementById('app-main-content').addEventListener('scroll', scroll)
-  }, 30)
+  }, 150)
 })
 
 onUnmounted(() => {

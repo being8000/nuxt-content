@@ -27,7 +27,7 @@
 
       <div v-if="toc && toc?.links?.length > 0"
         class="fixed z-20 top-[3.8125rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block">
-        <AppPageToc :toc="toc" />
+        <AppPageToc />
       </div>
     </div>
   </div>

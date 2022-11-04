@@ -28,7 +28,7 @@
               home page</span>
             <Logo style="height: 28px"></Logo>
           </a>
-          <div class="relative" data-headlessui-state="">
+          <!-- <div class="relative" >
             <button class="
                 text-xs
                 leading-5
@@ -44,15 +44,10 @@
                 hover:bg-slate-400/20
                 dark:highlight-white/5
               " id="headlessui-menu-button-1" type="button" aria-haspopup="true" aria-expanded="false"
-              data-headlessui-state="">
-              v
-              <!-- -->1.0.0
-              <!-- <svg width="6" height="3" class="ml-2 overflow-visible" aria-hidden="true">
-                <path d="M0 0L3 3L6 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                </path>
-              </svg> -->
+             >
+              e-pon Digital inc.
             </button>
-          </div>
+          </div> -->
 
           <div class="relative hidden lg:flex items-center ml-auto">
             <nav class="
