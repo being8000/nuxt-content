@@ -18,15 +18,15 @@
 
 <script setup>
 const { toc } = useContent();
+
 const refToc = ref(null);
 const tocLiList = ref([]);
 const { $scrollTo, $position, $debounce } = useNuxtApp();
 const nuxtApp = useNuxtApp();
-const scroll = () => {
+const scroll = (toc) => {
   var visibleBottom = 0 + document.documentElement.clientHeight;
   var visibleTop = window.scrollY;
-  const links = toc?.links || [];
-  console.log(links, "scroll", toc.links);
+  const links = toc.links || [];
   setTocItemStyle(visibleBottom, visibleTop, links);
 };
 
@@ -40,47 +40,47 @@ const getTocList = (links, dom) => {
     }
   });
 };
-const setTocItemStyle = (visibleBottom, visibleTop) => {
+const setTocItemStyle = (visibleBottom, visibleTop, links) => {
+  // console.log(tocLiList.value, "tocLiList.value");
   tocLiList.value.map((currentDom, index) => {
-    if (currentDom) {
-      const rect = currentDom?.getBoundingClientRect() || {};
-      const tocDom = document
-        .querySelector("#_app-page-toc-left-side")
-        .querySelector(`[href="#${currentDom.getAttribute("id")}"]`);
-      // console.log(tocDom)
-      const baseHeight = -65;
-      if (rect.y > baseHeight && rect.y < visibleBottom) {
+    const rect = currentDom.getBoundingClientRect();
+    const tocDom = document
+      .querySelector("#_app-page-toc-left-side")
+      .querySelector(`[href="#${currentDom.getAttribute("id")}"]`);
+    // console.log(tocDom)
+    const baseHeight = -65;
+    if (rect.y > baseHeight && rect.y < visibleBottom) {
+      tocDom.classList.add("text-primary-500", "dark:text-primary-400");
+    } else {
+      const nextDom = tocLiList.value[index + 1];
+      const nextY = nextDom
+        ? nextDom.getBoundingClientRect().y
+        : Math.pow(10, 10);
+      if (visibleBottom < nextY && rect.y < baseHeight) {
         tocDom.classList.add("text-primary-500", "dark:text-primary-400");
       } else {
-        const nextDom = tocLiList.value[index + 1];
-        const nextY = nextDom
-          ? nextDom.getBoundingClientRect().y
-          : Math.pow(10, 10);
-        if (visibleBottom < nextY && rect.y < baseHeight) {
-          tocDom.classList.add("text-primary-500", "dark:text-primary-400");
-        } else {
-          tocDom.classList.remove("text-primary-500", "dark:text-primary-400");
-        }
+        tocDom.classList.remove("text-primary-500", "dark:text-primary-400");
       }
     }
   });
 };
-
 onMounted(() => {
   const contentWrapper = document.querySelector(`#content-wrapper`);
   tocLiList.value = [];
-  console.log(toc.value?.links, "toc.value?.links");
-  const links = toc.value?.links || [];
-  getTocList(links, contentWrapper);
-  scroll();
-  document
-    .getElementById("app-main-content")
-    ?.addEventListener("scroll", scroll);
+  // console.log(toc.value?.links, "toc.value?.links");
+  setTimeout(() => {
+    const links = toc.value?.links || [];
+    getTocList(links, contentWrapper);
+    scroll(links);
+    document
+      .getElementById("app-main-content")
+      .addEventListener("scroll", scroll);
+  }, 150);
 });
 
 onUnmounted(() => {
   document
     .getElementById("app-main-content")
-    ?.removeEventListener("scroll", scroll);
+    .removeEventListener("scroll", scroll);
 });
 </script>
