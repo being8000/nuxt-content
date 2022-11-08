@@ -129,8 +129,4 @@ export default defineNuxtConfig({
       svgLoader(),
     ]
   },
-  target: 'server',
-  router: {
-    // base: '/nuxt-content/'
-  },
 })
